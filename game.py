@@ -106,8 +106,8 @@ class Game:
         if hits:
             the_brick.hit()
             self.score += 1
-            if self.score == 154:
-                self.victory()
+        if self.score == 154:
+            self.victory()
 
     def powerup_multiball(self):
         for _ in range(10):
