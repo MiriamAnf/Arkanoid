@@ -29,3 +29,6 @@ PAD_ACCELERATION = 2000
 
 BALL_RADIUS = 10
 BALL_SPEED = 200
+
+max_strenght = 2
+strenght = 1

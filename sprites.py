@@ -13,10 +13,15 @@ class Brick(pygame.sprite.Sprite):
         self.image = random.choice(game.brick_images)
         self.rect = self.image.get_rect()
         self.rect.center = Vector2(x, y)
+        self.max_strenght = max_strenght
+        self.strenght = strenght
 
     def hit(self):
-        self.game.break_fx.play()
-        self.kill()
+        if self.hit:
+            self.max_strenght -= self.strenght
+        if self.hit and self.max_strenght < 0:
+            self.game.break_fx.play()
+            self.kill()
         
 
 class Player(pygame.sprite.Sprite):

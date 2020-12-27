@@ -38,7 +38,7 @@ class Game:
         self.ball_image = pygame.image.load(
             path.join(img_folder, "ballBlue.png")
         )
-        brick_colors = ["blue", "purple", "red", "yellow", "green", "grey"]
+        brick_colors = ["blue", "purple", "green", "grey", "yellow", "red"]
         self.brick_images = []
         for color in brick_colors:
             filename = f"element_{color}_rectangle.png"
@@ -65,7 +65,7 @@ class Game:
                 Brick(
                     self,
                     BRICK_WIDTH * 2.5 + x * BRICK_WIDTH + x * 5,
-                    BRICK_HEIGHT * 2.5 + y * BRICK_HEIGHT + y * 5
+                    BRICK_HEIGHT * 2.5 + y * BRICK_HEIGHT + y * 5, 
                 )
 
     def run(self):
@@ -106,7 +106,7 @@ class Game:
         if hits:
             the_brick.hit()
             self.score += 1
-            if self.score == 77:
+            if self.score == 154:
                 self.victory()
 
     def powerup_multiball(self):
